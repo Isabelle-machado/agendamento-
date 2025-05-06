@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -23,11 +22,16 @@ const Index = () => {
             <LeadForm />
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
-            <img 
-              src="/lovable-uploads/a74510a7-d47d-443d-82bc-51fd14921b44.png" 
-              alt="Ikigai Diagram" 
-              className="max-w-full h-auto md:max-h-96 object-contain"
-            />
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-[#EFCB20] opacity-20 blur-xl"></div>
+              <div className="absolute -inset-0.5 rounded-full bg-[#EFCB20] opacity-10 blur-md"></div>
+              <img 
+                src="/lovable-uploads/88cae5e2-2494-4c5a-ae10-e35753425f10.png" 
+                alt="Ikigai Diagram" 
+                className="relative z-10 max-w-full h-auto md:max-h-96 object-contain transform transition-all duration-500 hover:scale-105"
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#EFCB20]/20 to-transparent opacity-50 pointer-events-none"></div>
+            </div>
           </div>
         </div>
       </section>
