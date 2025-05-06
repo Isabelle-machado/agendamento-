@@ -47,19 +47,26 @@ const LeadForm = () => {
       // Submit to Google Sheet
       await submitToGoogleSheet(formData);
       
-      // Also submit to Make.com webhook
-      await fetch("https://hook.us2.make.com/b95gjdjhuatek818jxuwratsgplxdudt", {
+      // Submit to Make.com webhook with proper content-type and full data
+      const webhookData = {
+        name: formData.name,
+        email: formData.email,
+        whatsapp: formData.whatsapp,
+        timestamp: new Date().toISOString(),
+        source: window.location.href
+      };
+
+      console.log("Sending data to webhook:", webhookData);
+      
+      const webhookResponse = await fetch("https://hook.us2.make.com/b95gjdjhuatek818jxuwratsgplxdudt", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString(),
-          source: window.location.href
-        }),
-        mode: "no-cors",
+        body: JSON.stringify(webhookData),
       });
+      
+      console.log("Webhook response status:", webhookResponse.status);
       
       toast({
         title: "Envio bem-sucedido!",
