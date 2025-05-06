@@ -71,11 +71,8 @@ const LeadForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-md mx-auto bg-zinc-900 p-6 rounded-lg border border-zinc-800 shadow-lg">
+    <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-md bg-zinc-900 p-6 rounded-lg border border-zinc-800 shadow-lg">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-          Nome
-        </label>
         <Input
           id="name"
           name="name"
@@ -88,9 +85,6 @@ const LeadForm = () => {
       </div>
       
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-          Email
-        </label>
         <Input
           id="email"
           name="email"
@@ -104,9 +98,6 @@ const LeadForm = () => {
       </div>
       
       <div>
-        <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-300 mb-1">
-          WhatsApp
-        </label>
         <Input
           id="whatsapp"
           name="whatsapp"
@@ -114,7 +105,7 @@ const LeadForm = () => {
           value={formData.whatsapp}
           onChange={handleChange}
           className="bg-zinc-800 border-zinc-700 focus:border-[#EFCB20] text-white"
-          placeholder="(00) 00000-0000"
+          placeholder="WhatsApp (com DDD)"
           disabled={isSubmitting}
         />
       </div>

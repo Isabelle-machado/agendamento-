@@ -18,8 +18,17 @@ const Index = () => {
           Baixe o framework e conecte sua missão e suas paixões com o seu caminho para o enriquecimento.
         </p>
         
-        <div className="mt-8 w-full max-w-lg mx-auto">
-          <LeadForm />
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="w-full md:w-1/2">
+            <LeadForm />
+          </div>
+          <div className="w-full md:w-1/2 flex justify-center">
+            <img 
+              src="/lovable-uploads/a74510a7-d47d-443d-82bc-51fd14921b44.png" 
+              alt="Ikigai Diagram" 
+              className="max-w-full h-auto md:max-h-96 object-contain"
+            />
+          </div>
         </div>
       </section>
 
@@ -88,7 +97,7 @@ const Index = () => {
       {/* Footer with Logo */}
       <footer className="w-full bg-[#1C1C1A] py-10 px-4 border-t border-gray-800">
         <div className="max-w-5xl mx-auto flex flex-col items-center">
-          <div className="text-xs text-[#DAD5D0] text-center max-w-3xl">
+          <div className="text-xs text-[#DAD5D0] text-center max-w-3xl italic">
             <p className="mb-4 uppercase text-sm">IMPORTANTE: Isenção de responsabilidade sobre ganhos e rendimentos.</p>
             <p className="mb-6 text-xs">
               Embora todos os depoimentos nesta página sejam reais, estes resultados são excepcionais e não representativos dos resultados que podem ser esperados por uma pessoa média. Os resultados podem variar conforme suas habilidades, experiência, formação e outros fatores. 
