@@ -1,45 +1,25 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useEffect } from "react";
 import TestimonialCard from "@/components/TestimonialCard";
 import TextTestimonialCard from "@/components/TextTestimonialCard";
-import FormsAppEmbed from "@/components/FormsAppEmbed";
+import LeadForm from "@/components/LeadForm";
 import { Youtube, Instagram, Linkedin } from "lucide-react";
 
 const Index = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://forms.app/cdn/embed.js";
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      // @ts-ignore
-      new window.formsapp('680ffb834528e40002798b7b', 'standard', {
-        'width': '100vw',
-        'height': '600px'
-      }, 'https://59yt4z4p.forms.app');
-    };
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
   return <div className="min-h-screen bg-[#1C1C1A] text-white flex flex-col items-center font-satoshi">
-      {/* Hero Section with Video */}
+      {/* Hero Section with Form */}
       <section className="w-full max-w-5xl mx-auto px-4 py-12 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">
-          Assista o vídeo abaixo para entender como podemos{" "}
-          <span className="text-[#EFCB20] py-0 mx-0 rounded-none px-0">revolucionar seu negócio educacional</span> com sistemas e tecnologia
+        <h1 className="text-3xl md:text-5xl font-bold mb-4">
+          Descubra seu <span className="text-[#EFCB20] py-0 mx-0 rounded-none px-0">Ikigai</span>
         </h1>
         
-        <div className="mt-8 relative w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-2xl">
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/zJ5YbsF0ffQ" title="Video de apresentação" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="rounded-lg"></iframe>
-        </div>
-
-        {/* Form Section */}
-        <div className="mt-10 mb-10 w-full max-w-3xl mx-auto">
-          <FormsAppEmbed formId="680ffb834528e40002798b7b" />
+        <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          Baixe o framework e conecte sua missão e suas paixões com o seu caminho para o enriquecimento.
+        </p>
+        
+        <div className="mt-8 w-full max-w-lg mx-auto">
+          <LeadForm />
         </div>
       </section>
 
@@ -108,10 +88,6 @@ const Index = () => {
       {/* Footer with Logo */}
       <footer className="w-full bg-[#1C1C1A] py-10 px-4 border-t border-gray-800">
         <div className="max-w-5xl mx-auto flex flex-col items-center">
-          <div className="mb-10">
-            
-          </div>
-          
           <div className="text-xs text-[#DAD5D0] text-center max-w-3xl">
             <p className="mb-4 uppercase text-sm">IMPORTANTE: Isenção de responsabilidade sobre ganhos e rendimentos.</p>
             <p className="mb-6 text-xs">
