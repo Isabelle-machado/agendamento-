@@ -44,7 +44,22 @@ const LeadForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Submit to Google Sheet
       await submitToGoogleSheet(formData);
+      
+      // Also submit to Make.com webhook
+      await fetch("https://hook.us2.make.com/b95gjdjhuatek818jxuwratsgplxdudt", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          source: window.location.href
+        }),
+        mode: "no-cors",
+      });
       
       toast({
         title: "Envio bem-sucedido!",
