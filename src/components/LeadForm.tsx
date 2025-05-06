@@ -73,6 +73,9 @@ const LeadForm = () => {
         whatsapp: "",
       });
       
+      // Redirect after successful submission
+      window.location.href = "https://aula.masterpiececompany.com.br";
+      
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
       toast({
@@ -96,6 +99,7 @@ const LeadForm = () => {
           className="bg-zinc-800 border-zinc-700 focus:border-[#EFCB20] text-white"
           placeholder="Seu nome completo"
           disabled={isSubmitting}
+          required
         />
       </div>
       
@@ -109,6 +113,7 @@ const LeadForm = () => {
           className="bg-zinc-800 border-zinc-700 focus:border-[#EFCB20] text-white"
           placeholder="seu.email@exemplo.com"
           disabled={isSubmitting}
+          required
         />
       </div>
       
@@ -122,6 +127,7 @@ const LeadForm = () => {
           className="bg-zinc-800 border-zinc-700 focus:border-[#EFCB20] text-white"
           placeholder="WhatsApp (com DDD)"
           disabled={isSubmitting}
+          required
         />
       </div>
       
