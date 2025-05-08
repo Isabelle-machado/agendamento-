@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -26,8 +27,8 @@ const Index = () => {
               <div className="absolute inset-0 rounded-full bg-[#EFCB20] opacity-20 blur-xl"></div>
               <div className="absolute -inset-0.5 rounded-full bg-[#EFCB20] opacity-10 blur-md"></div>
               <img 
-                src="/lovable-uploads/88cae5e2-2494-4c5a-ae10-e35753425f10.png" 
-                alt="Ikigai Diagram" 
+                src="/lovable-uploads/64db7dfd-72be-495d-a8c7-9fcd502ab168.png" 
+                alt="Workshop Presentation" 
                 className="relative z-10 max-w-full h-auto md:max-h-96 object-contain transform transition-all duration-500 hover:scale-105"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#EFCB20]/20 to-transparent opacity-50 pointer-events-none"></div>
