@@ -3,12 +3,25 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import TestimonialCard from "@/components/TestimonialCard";
 import TextTestimonialCard from "@/components/TextTestimonialCard";
-import LeadForm from "@/components/LeadForm";
 import { Youtube, Instagram, Linkedin } from "lucide-react";
+import { useEffect } from "react";
 
 const Index = () => {
+  useEffect(() => {
+    // Load Calendly widget script
+    const script = document.createElement('script');
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up script when component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return <div className="min-h-screen bg-[#1C1C1A] text-white flex flex-col items-center font-satoshi">
-      {/* Hero Section with Form */}
+      {/* Hero Section with Calendly */}
       <section className="w-full max-w-5xl mx-auto px-4 py-12 text-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4">
           Descubra seu <span className="text-[#EFCB20] py-0 mx-0 rounded-none px-0">Ikigai</span>
@@ -18,22 +31,13 @@ const Index = () => {
           Baixe o framework e conecte sua missão e suas paixões com o seu caminho para o enriquecimento.
         </p>
         
-        <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-8">
-          <div className="w-full md:w-1/2">
-            <LeadForm />
-          </div>
-          <div className="w-full md:w-1/2 flex justify-center">
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-[#EFCB20] opacity-20 blur-xl"></div>
-              <div className="absolute -inset-0.5 rounded-full bg-[#EFCB20] opacity-10 blur-md"></div>
-              <img 
-                src="/lovable-uploads/64db7dfd-72be-495d-a8c7-9fcd502ab168.png" 
-                alt="Workshop Presentation" 
-                className="relative z-10 max-w-full h-auto md:max-h-96 object-contain transform transition-all duration-500 hover:scale-105"
-              />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#EFCB20]/20 to-transparent opacity-50 pointer-events-none"></div>
-            </div>
-          </div>
+        <div className="mt-8">
+          {/* Calendly Widget */}
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/masterpiece_company/pesquisa-mapeamento?background_color=1c1c1a&text_color=ffffff&primary_color=efcb20" 
+            style={{minWidth: "320px", height: "700px"}}
+          ></div>
         </div>
       </section>
 
